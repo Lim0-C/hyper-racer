@@ -22,12 +22,11 @@ public class GameManager : MonoBehaviour
     private int _roadPoolSize = 3;
     // 도로 이동
     private List<GameObject> _activeRoads = new List<GameObject>();
-    private void Start()
-    {
-        InnitializeRoadPool();
-        
-        StartGame();
-    }
+    
+    //상태
+    public enum State {Start, Play, End}
+    public State GameState { get; private set; } = State.Start;
+    
     //싱글톤
     public static GameManager _instance;
     public static GameManager Instance
@@ -53,6 +52,14 @@ public class GameManager : MonoBehaviour
             _instance = this;
         }
     }
+    
+    private void Start()
+    {
+        InnitializeRoadPool();
+        
+        StartGame();
+    }
+    
     private void Update()
     {
         foreach (var activeRoad in _activeRoads)
