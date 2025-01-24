@@ -7,17 +7,7 @@ using Random = UnityEngine.Random;
 public class RoadController : MonoBehaviour
 {
     [SerializeField] private GameObject[] gasObjects;
-
-    private void Start()
-    {
-        foreach (var gasObject in gasObjects)
-        {
-            gasObject.SetActive(false);
-        }
-    }
-
     
-
     private void OnEnable()
     {
         foreach (var gasObject in gasObjects)

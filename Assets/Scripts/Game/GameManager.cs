@@ -189,6 +189,7 @@ public class GameManager : MonoBehaviour
 
         if (_roadIndex > 0 && _roadIndex % 2 == 0)
         {
+            Debug.Log("Spawn Gas Road Index: " + _roadIndex);
             road.GetComponent<RoadController>().SpawnGas();
         }
         
