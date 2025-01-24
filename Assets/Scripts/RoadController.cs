@@ -17,7 +17,9 @@ public class RoadController : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    
+
+    private void OnEnable()
     {
         foreach (var gasObject in gasObjects)
         {
